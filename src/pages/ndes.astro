@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allNDEs = await Astro.glob('../pages/nde/**/*.mdx');
+---
+
+<BaseLayout title="Списък - Преживявания близки до смъртта">
+	<h1 class="pb-10">ПБС Списък</h1>
+	
+	<p>Всички ПБС ({allNDEs.length}):</p>
+	<ul>
+	{allNDEs.map((nde) => (
+		<li><a href={nde.frontmatter.url}>{nde.frontmatter.experiencer}</a></li>
+	))}
+	</ul>
+</BaseLayout>
+
+<style>
+</style>

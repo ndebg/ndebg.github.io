@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pages = await Astro.glob('../pages/pages/*.mdx');
+---
+
+<BaseLayout title="Страници">
+	<h1>Страници</h1>
+	<div>
+		<ul>
+			<li><a href="/ndes">ПБС Списък</a></li>
+		{pages.map((page) => (
+			<li><a href={page.frontmatter.url}>{page.frontmatter.title}</a></li>
+		))}
+		</ul>
+	</div>
+</BaseLayout>
+
+<style>
+</style>

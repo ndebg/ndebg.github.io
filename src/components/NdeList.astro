@@ -1,0 +1,22 @@
+---
+export interface Props {
+	headerText: string;
+	items: Array<Props>;
+}
+
+const { headerText, items } = Astro.props as Props;
+---
+
+
+<div class="xl:w-1/2 md:w-1/2 pl-6 pr-6">
+	<div class="pb-6 pr-2 rounded-lg">
+		<h2 class="section-header">{headerText}</h2>
+		<p class="leading-relaxed">
+		<!-- {items.map((item) => (
+			<a href={item.frontmatter.url}>{item.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+		))} -->
+		</p>
+	</div>
+</div>
+<style>
+</style>
