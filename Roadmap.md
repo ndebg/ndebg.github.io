@@ -2,11 +2,8 @@
 
 - [ ] Make SEO friendly!
   - [ ] Add keywords
-  - [ ] Add canonical URL
   - [ ] Add Robot tag
   - [ ] Add Author
-  - [ ] Fix redirects. All link to end with /
-  - [ ] Add Open Graph tags for Facebook
 
 - [ ] Publish to Github
 - [ ] Publish to ndebg.com
@@ -35,3 +32,6 @@
 - [ ] Make SEO friendly!
   - [x] Lazy load YouTube videos
   - [ж] Add custom description for all pages
+  - [x] Add canonical URL
+  - [x] Fix redirects. All link to end with /
+  - [x] Add Open Graph tags for Facebook

@@ -6,13 +6,15 @@ export interface Props {
 
 const { title, description } = Astro.props.frontmatter || Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://ndebg.com");
+const publicURLBase = "https://ndebg.com"
+const canonicalURL = new URL(Astro.url.pathname, publicURLBase);
+const ogImageURL = "https://ndebg.github.io" + "/images/abstract-light.jpg"
 
 const year = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" prefix="og:http://ogp.me/ns#">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -20,6 +22,11 @@ const year = new Date().getFullYear();
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description“" content={description} />
+		<meta property="og:url“" content={canonicalURL} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:locale" content="bg" />
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col min-h-screen">
