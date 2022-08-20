@@ -26,8 +26,8 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Известни ПБС</h2>
 				<p class="leading-relaxed">
-				{famousNDEs.map((nde, i, row) => (
-					<a href={nde.frontmatter.url}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+				{famousNDEs.map((nde) => (
+					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>
 			</div>
@@ -36,8 +36,8 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Други ПБС</h2>
 				<p class="leading-relaxed">
-				{othersNDEs.map((nde, i, row) => (
-					<a href={nde.frontmatter.url}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+				{othersNDEs.map((nde) => (
+					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>
 			</div>
@@ -46,8 +46,8 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Християнски ПБС</h2>
 				<p class="leading-relaxed">
-				{christianNDEs.map((nde, i, row) => (
-					<a href={nde.frontmatter.url}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+				{christianNDEs.map((nde) => (
+					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>
 			</div>
@@ -56,8 +56,8 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Български ПБС</h2>
 				<p class="leading-relaxed">
-				{bulgarianNDEs.map((nde, i, row) => (
-					<a href={nde.frontmatter.url}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+				{bulgarianNDEs.map((nde) => (
+					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>
 			</div>
@@ -66,7 +66,7 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Книги</h2>
 				<p class="leading-relaxed">
-					<a href="/books">Досег до вечния живот</a>
+					<a href="/books/">Досег до вечния живот</a>
 				</p>
 			</div>
 		</div>
@@ -74,10 +74,10 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Страници</h2>
 				<p class="leading-relaxed">
-				{pages.map((page, i, row) => (
-					<a href={page.frontmatter.url}>{page.frontmatter.title}</a><span>&comma;&nbsp;</span>
+				{pages.map((page) => (
+					<a href={page.frontmatter.url+"/"}>{page.frontmatter.title}</a><span>&comma;&nbsp;</span>
 				))}
-					<a href="/ndes">ПБС Списък</a>
+					<a href="/ndes/">ПБС Списък</a>
 				</p>
 			</div>
 		</div>
