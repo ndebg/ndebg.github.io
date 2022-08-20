@@ -1,8 +1,5 @@
 # Roadmap
 
-- [ ] Archive to GitLab
-- [ ] Archive to https://web.archive.org/
-
 - [ ] Make NDEList Astro component
 - [ ] Add a secure form for sharing NDE (with required and optional fields)
 - [ ] Add a secure contact form
@@ -29,3 +26,5 @@
 - [x] Make [Facebook page](https://www.facebook.com/ndebgcom/)
 - [x] Add links to FB page
 - [x] Republish website
+- [x] Archive to GitLab
+- [x] Archive to https://web.archive.org/
