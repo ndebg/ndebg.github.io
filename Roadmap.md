@@ -1,8 +1,6 @@
 # Roadmap
 
 - [ ] Make SEO friendly!
-    [x] Lazy load YouTube videos
-  - [ ] Add custom description for all pages
   - [ ] Add keywords
   - [ ] Add canonical URL
   - [ ] Add Robot tag
@@ -34,3 +32,6 @@
 - [x] Add additional links to all NDES
 - [x] Improve main page - content and layout
 - [x] Add back button at the bottom of an NDE page 
+- [ ] Make SEO friendly!
+  - [x] Lazy load YouTube videos
+  - [ж] Add custom description for all pages
