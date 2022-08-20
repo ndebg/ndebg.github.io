@@ -27,4 +27,4 @@
 - [x] Add links to FB page
 - [x] Republish website
 - [x] Archive to GitLab
-- [x] Archive to https://web.archive.org/
+- [x] Archive to archive.org
