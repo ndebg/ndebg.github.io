@@ -8,7 +8,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 
 const publicURLBase = "https://ndebg.com"
 const canonicalURL = new URL(Astro.url.pathname, publicURLBase);
-const ogImageURL = "https://ndebg.github.io" + "/images/abstract-light.jpg"
+const ogImageURL = publicURLBase + "/images/abstract-light.jpg"
 
 const year = new Date().getFullYear();
 ---
