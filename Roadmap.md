@@ -28,3 +28,5 @@
 - [x] Republish website
 - [x] Archive to GitLab
 - [x] Archive to archive.org
+- [x] Register Unstoppable domain
+- [x] Upload to IPFS and link to UD domain
