@@ -23,7 +23,7 @@
   - [x] Fix redirects. All link to end with /
   - [x] Add Open Graph tags for Facebook
 - [x] Publish to ndebg.com
-- [x] Make [Facebook page](https://www.facebook.com/ndebgcom/)
+- [x] Make Facebook page
 - [x] Add links to FB page
 - [x] Republish website
 - [x] Archive to GitLab
