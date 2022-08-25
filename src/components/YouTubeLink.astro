@@ -1,0 +1,18 @@
+---
+export interface Props {
+	videoID: string,
+	title: string;
+}
+
+const { videoID, title } = Astro.props as Props;
+---
+
+<div class="video-container">
+    <a href={"https://www.youtube.com/watch?v=" + videoID}
+        title={title}>
+        <h3 class="textalign-center">🔗 {title}</h3>
+        <img style="position:absolute;width:100%"
+            src={"https://img.youtube.com/vi/" + videoID + "/hqdefault.jpg"}
+            alt={title} />
+    </a>
+</div>
