@@ -13,10 +13,13 @@ Communication:
 - [ ] Add Newsletter
 - [ ] Add a secure contact form
 
+Longevity:
+- [ ] Find more ways to archive the NDEs
+- [ ] Find people and organizations that want to help with backups and archives
+
 Internal Coding:
 - [ ] Make NDEList Astro component
 - [ ] Make a night theme
-
 
 ## History
 
