@@ -50,10 +50,10 @@ const year = new Date().getFullYear();
 			<div class="header-top mx-auto flex flex-wrap p-3 flex-col md:flex-row place-content-center">
 				<a href="/" class="header-title ml-3 text-xl textalign-center font-bold">Преживявания близки до смъртта</a>
 			</div>
-			<div class="header-menu mx-auto flex flex-wrap p-1 flex-col textalign-center items-center">
+			<div class="header-menu mx-auto flex flex-wrap p-2 flex-col textalign-center items-center">
 				<nav class="flex flex-wrap place-content-center">
 					{menuItems.map((item) => (
-					<a href={item.link} class="main-menu-item mr-2 p-2 hover:text-gray-900">{item.text}</a>
+					<a href={item.link} class="main-menu-item mr-1 p-1 sm:mr-2 sm:p-2 hover:text-gray-900">{item.text}</a>
 					))}
 				</nav>
 			</div>
