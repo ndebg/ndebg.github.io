@@ -150,6 +150,10 @@ header h2 {
 }
 
 main h1 {
+	/* Workaround astro CSS build order */
+	font-size: var(--font-size-lg);
+	font-weight: bold;
+	
 	text-align: center;
     color: #005A9C;
 }
