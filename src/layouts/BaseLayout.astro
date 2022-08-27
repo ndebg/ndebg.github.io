@@ -101,7 +101,6 @@ const year = new Date().getFullYear();
 					const menuItems = document.getElementsByClassName("main-menu-item");
 					for (const menuItem of menuItems) {
 						if (menuItem.getAttribute("href").includes(location.pathname)) {
-							console.log(menuItem.getAttribute("href"));
 							menuItem.classList.add("header-menu-hover");
 						}
 					};
