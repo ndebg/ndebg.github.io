@@ -35,7 +35,7 @@ const year = new Date().getFullYear();
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col min-h-screen">
-		<header id="main-header" class="text-gray-600 body-font">
+		<header id="main-header" class="text-gray-600 body-font unselectable">
 			<div class="header-top mx-auto flex flex-wrap p-3 flex-col md:flex-row place-content-center">
 				<a href="/" class="header-title ml-3 text-xl textalign-center font-bold">Преживявания близки до смъртта</a>
 			</div>
@@ -57,7 +57,7 @@ const year = new Date().getFullYear();
 				<slot />
 			</div>
 		</main>
-		<footer class="footer-before text-gray-400 body-font">
+		<footer class="footer-before text-gray-400 body-font unselectable">
 			<div class="container mx-auto flex flex-wrap p-3 place-content-center">
 				<span class="footer-text"><a onclick="window.history.go(-1);return false;" class="cursor-pointer" title="Обратно до предишната страница">&#129136; Обратно</a></span> |
 				<span class="footer-text"><a href="#main-header" title="Начало на страницата">&#129137; Начало</a></span> |
@@ -77,7 +77,7 @@ const year = new Date().getFullYear();
 				</span>
 			</div>
 		</footer>
-		<footer class="footer-links text-gray-400 body-font">
+		<footer class="footer-links text-gray-400 body-font unselectable">
 			<div class="container mx-auto flex flex-wrap p-2 place-content-center">
 				<span class="footer-text">©2007-<span id="currentYear">{year}</span> ndebg.com</span> | 
 				<span class="footer-text"><a href="/license/">Лицензи</a></span> | 
@@ -230,6 +230,12 @@ main ul, main ol {
 
 .cursor-pointer {
 	cursor: pointer;
+}
+.unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
 }
 
 </style>
