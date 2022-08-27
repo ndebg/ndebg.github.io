@@ -11,14 +11,14 @@ const canonicalURL = new URL(Astro.url.pathname, publicURLBase);
 const ogImageURL = publicURLBase + "/images/abstract-light.jpg"
 
 const menuItems = [
-	{id: "mi-about", link: "/about/", text: "Относно"},
-	{id: "mi-pages", link: "/pages/", text: "Страници"},
-	{id: "mi-books", link: "/books/", text: "Книги"},
-	{id: "mi-links", link: "/links/", text: "Връзки"},
-	{id: "mi-share", link: "/share/", text: "Сподели ПБС"},
-	{id: "mi-contribute", link: "/contribute/", text: "Помогни"},
-	{id: "mi-newsletter", link: "/newsletter/", text: "Бюлетин"},
-	{id: "mi-contact", link: "/contact/", text: "Контакт"},
+	{link: "/about/", text: "Относно"},
+	{link: "/pages/", text: "Страници"},
+	{link: "/books/", text: "Книги"},
+	{link: "/links/", text: "Връзки"},
+	{link: "/share/", text: "Сподели ПБС"},
+	{link: "/contribute/", text: "Помогни"},
+	{link: "/newsletter/", text: "Бюлетин"},
+	{link: "/contact/", text: "Контакт"},
 ];
 
 const year = new Date().getFullYear();
