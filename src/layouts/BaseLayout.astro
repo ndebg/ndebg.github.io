@@ -10,6 +10,17 @@ const publicURLBase = "https://ndebg.com"
 const canonicalURL = new URL(Astro.url.pathname, publicURLBase);
 const ogImageURL = publicURLBase + "/images/abstract-light.jpg"
 
+const menuItems = [
+	{id: "mi-about", link: "/about/", text: "Относно"},
+	{id: "mi-pages", link: "/pages/", text: "Страници"},
+	{id: "mi-books", link: "/books/", text: "Книги"},
+	{id: "mi-links", link: "/links/", text: "Връзки"},
+	{id: "mi-share", link: "/share/", text: "Сподели ПБС"},
+	{id: "mi-contribute", link: "/contribute/", text: "Помогни"},
+	{id: "mi-newsletter", link: "/newsletter/", text: "Бюлетин"},
+	{id: "mi-contact", link: "/contact/", text: "Контакт"},
+];
+
 const year = new Date().getFullYear();
 ---
 
@@ -41,14 +52,9 @@ const year = new Date().getFullYear();
 			</div>
 			<div class="header-menu mx-auto flex flex-wrap p-2 flex-col textalign-center items-center">
 				<nav>
-					<a href="/about/" class="mr-2 p-2 hover:text-gray-900">Относно</a>
-					<a href="/pages/" class="mr-2 p-2 hover:text-gray-900">Страници</a>
-					<a href="/books/" class="mr-2 p-2 hover:text-gray-900">Книги</a>
-					<a href="/links/" class="mr-2 p-2 hover:text-gray-900">Връзки</a>
-					<a href="/share/" class="mr-2 p-2 hover:text-gray-900">Сподели ПБС</a>
-					<a href="/contribute/" class="mr-2 p-2 hover:text-gray-900">Помогни</a>
-					<a href="/newsletter/" class="mr-2 p-2 hover:text-gray-900">Бюлетин</a>
-					<a href="/contact/" class="mr-2 p-2 hover:text-gray-900">Контакт</a>
+					{menuItems.map((item) => (
+					<a href={item.link} class="main-menu-item mr-2 p-2 hover:text-gray-900">{item.text}</a>
+					))}
 				</nav>
 			</div>
 			</header>
@@ -90,6 +96,16 @@ const year = new Date().getFullYear();
 			document.addEventListener("DOMContentLoaded", function(){
 				const yearEl = document.getElementById("currentYear");
 				if (yearEl) { yearEl.innerHTML = year + "";}
+				
+				if (location.pathname !== "/") {
+					const menuItems = document.getElementsByClassName("main-menu-item");
+					for (const menuItem of menuItems) {
+						if (menuItem.getAttribute("href").includes(location.pathname)) {
+							console.log(menuItem.getAttribute("href"));
+							menuItem.classList.add("header-menu-hover");
+						}
+					};
+				}
 			});
 		</script>
 	</body>
@@ -139,7 +155,8 @@ header h2 {
 .header-menu {
 	background-color: #FFFEF0;
 }
-.header-menu a:hover {
+.header-menu a:hover,
+.header-menu-hover {
 	background-color: #FFE188;
 	background-repeat: repeat-x;
 }
