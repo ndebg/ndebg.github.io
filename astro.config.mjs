@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ndebg.github.io',
+  site: 'https://ndebg.com',
   sitemap: true,
   integrations: [mdx(), tailwind()]
 });
