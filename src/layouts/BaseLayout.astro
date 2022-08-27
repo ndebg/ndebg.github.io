@@ -58,7 +58,8 @@ const year = new Date().getFullYear();
 		</main>
 		<footer class="footer-before text-gray-400 body-font">
 			<div class="container mx-auto flex flex-wrap p-1 place-content-center">
-				<span class="footer-text"><a href="#main-header">Върни се в началото</a></span> |
+				<span class="footer-text"><a onclick="window.history.go(-1);return false;" class="cursor-pointer" title="Обратно до предишната страница">&#129136; Обратно</a></span> |
+				<span class="footer-text"><a href="#main-header" title="Начало на страницата">&#129137; Начало</a></span> |
 				<span class="footer-text"><a href="/">Главна страница</a></span> |
 				<span class="footer-text"><a href="https://www.facebook.com/groups/ndebulgaria/">Дискусия</a></span> |
 				<span class="footer-text">
@@ -223,6 +224,10 @@ main ul, main ol {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }
 
 </style>
