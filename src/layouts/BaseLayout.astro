@@ -9,6 +9,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 import SVGLeftArrow from '../components/svg/SVGLeftArrow.astro';
 import SVGUpArrow from '../components/svg/SVGUpArrow.astro';
 import SVGFacebook from '../components/svg/SVGFacebook.astro';
+import SVGChat from '../components/svg/SVGChat.astro';
 import SVGGitHub from '../components/svg/SVGGitHub.astro';
 
 const publicURLBase = "https://ndebg.com"
@@ -81,8 +82,12 @@ const year = new Date().getFullYear();
 					</a>
 				</span> |
 				<span class="footer-text"><a href="/">Главна страница</a></span> |
-				<span class="footer-text"><a href="https://www.facebook.com/groups/ndebulgaria/">Дискусия</a></span> |
 				<span class="footer-text"><a href="/newsletter/">Бюлетин</a></span> |
+				<span class="footer-text">
+					<a href="https://www.facebook.com/groups/ndebulgaria/">
+						<SVGChat/>&nbsp;&nbsp;Дискусия
+					</a>
+				</span> |
 				<span class="footer-text">
 					<a href="https://www.facebook.com/ndebulgaria/" title="Facebook страница">
 						<SVGFacebook />
