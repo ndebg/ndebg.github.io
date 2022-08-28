@@ -9,6 +9,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 import SVGLeftArrow from '../components/svg/SVGLeftArrow.astro';
 import SVGUpArrow from '../components/svg/SVGUpArrow.astro';
 import SVGFacebook from '../components/svg/SVGFacebook.astro';
+import SVGGitHub from '../components/svg/SVGGitHub.astro';
 
 const publicURLBase = "https://ndebg.com"
 const canonicalURL = new URL(Astro.url.pathname, publicURLBase);
@@ -92,6 +93,7 @@ const year = new Date().getFullYear();
 		<footer class="footer-links text-gray-400 body-font unselectable">
 			<div class="container mx-auto flex flex-wrap p-2 place-content-center">
 				<span class="footer-text">©2007-<span id="currentYear">{year}</span> ndebg.com</span> | 
+				<span class="footer-text"><a href="https://github.com/ndebg/ndebg.github.io/"><SVGGitHub /></a></span> | 
 				<span class="footer-text"><a href="/license/">Лицензи</a></span> | 
 				<span class="footer-text"><a href="/privacy-policy/">Декларация за поверителност</a></span> | 
 				<span class="footer-text"><a href="/legal-notice-and-disclaimer/">Отказ от права</a></span>
