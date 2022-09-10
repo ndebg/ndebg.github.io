@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 
 const ndes = await Astro.glob('../pages/nde/*.mdx');
 
@@ -13,6 +14,7 @@ const othersNDEs = ndes.filter((nde) => (
 	nde.frontmatter.tags && nde.frontmatter.tags.includes('others')
 ));
 const bulgarianNDEs = await Astro.glob('../pages/nde/bg/*.mdx');
+const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
 
 const pages = await Astro.glob('../pages/pages/*.mdx');
 ---
@@ -20,6 +22,7 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 <BaseLayout title="Преживявания близки до смъртта"
 	description="Преживявания близки до смъртта (ПБС)">
 	<h1 class="pb-5">Преживявания близки до смъртта</h1>
+
 	<p class="pb-10">
 		<a href="/about/">Преживяванe близко до смъртта (ПБС)</a> e лично преживяване, свързано с предстояща смърт, включващо усещания като отделяне от тялото, интензивни чувства, среща със светлини и други.
 	</p>
@@ -63,6 +66,7 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>
+				<p><a href="/share/">Сподели ПБС</a></p>
 			</div>
 		</div>
 		<div class="xl:w-1/2 md:w-1/2 pl-6 pr-6">
@@ -84,12 +88,19 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 				</p>
 			</div>
 		</div>
+		<div class="xl:w-1/2 md:w-1/2 pl-6 pr-6">
+			<div class="pb-6 pr-2 rounded-lg">
+				<h2 class="section-header">ПБС за Превод</h2>
+				<p class="leading-relaxed">
+				{todoNDEs.map((nde) => (
+					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
+				))}
+				</p>
+			</div>
+		</div>
 	</div>
 
-	<div class="video-container">
-		<iframe src="https://www.youtube.com/embed/zcxSigXdDBw" title="Преживявания близки до смъртта" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-		srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/zcxSigXdDBw?autoplay=1><img src=https://img.youtube.com/vi/zcxSigXdDBw/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" allowfullscreen></iframe>
-	</div>
+	<YouTubeEmbed videoID="zcxSigXdDBw" title="Преживявания близки до смъртта" hideHeader="true"/>
 	<a href="https://www.youtube.com/watch?v=zcxSigXdDBw">Youtube линк към видеото</a>
 </BaseLayout>
 
