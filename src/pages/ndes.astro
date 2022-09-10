@@ -1,16 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const allNDEs = await Astro.glob('../pages/nde/**/*.mdx');
+const ndes = await Astro.glob('../pages/nde/*.mdx');
+const bulgarianNDEs = await Astro.glob('../pages/nde/bg/*.mdx');
+const allDoneNDEs = ndes.concat(bulgarianNDEs);
+
+const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
 ---
 
 <BaseLayout title="Списък - Преживявания близки до смъртта"
 	description="Списък - Преживявания близки до смъртта">
-	<h1 class="pb-10">ПБС Списък</h1>
+	<h1 class="pb-10">Списък - Преживявания близки до смъртта</h1>
 	
-	<p>Всички ПБС ({allNDEs.length}):</p>
+	<p>Всички преведени ПБС&nbsp;({allDoneNDEs.length}):</p>
 	<ul>
-	{allNDEs.map((nde) => (
+	{allDoneNDEs.map((nde) => (
+		<li><a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a></li>
+	))}
+	</ul>
+	
+	<p>ПБС за превод&nbsp;({todoNDEs.length}):</p>
+	<ul>
+	{todoNDEs.map((nde) => (
 		<li><a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a></li>
 	))}
 	</ul>
