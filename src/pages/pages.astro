@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pages = await Astro.glob('../pages/pages/*.mdx');
+const nonDraftPages = pages.filter((post) => !post.frontmatter.draft);
+
 ---
 
 <BaseLayout title="Страници"
@@ -9,7 +11,7 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 	<h1>Страници</h1>
 	<div>
 		<ul>
-		{pages.map((page) => (
+		{nonDraftPages.map((page) => (
 			<li><a href={page.frontmatter.url+"/"}>{page.frontmatter.title}</a></li>
 		))}
 			<li><a href="/ndes/">ПБС Списък</a></li>

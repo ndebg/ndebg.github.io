@@ -17,6 +17,7 @@ const bulgarianNDEs = await Astro.glob('../pages/nde/bg/*.mdx');
 const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
 
 const pages = await Astro.glob('../pages/pages/*.mdx');
+const nonDraftPages = pages.filter((post) => !post.frontmatter.draft);
 ---
 
 <BaseLayout title="Преживявания близки до смъртта"
@@ -81,7 +82,7 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">Страници</h2>
 				<p class="leading-relaxed">
-				{pages.map((page) => (
+				{nonDraftPages.map((page) => (
 					<a href={page.frontmatter.url+"/"}>{page.frontmatter.title}</a><span>&comma;&nbsp;</span>
 				))}
 					<a href="/ndes/">ПБС Списък</a>&comma;&nbsp;
