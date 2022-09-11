@@ -15,6 +15,7 @@ const othersNDEs = ndes.filter((nde) => (
 ));
 const bulgarianNDEs = await Astro.glob('../pages/nde/bg/*.mdx');
 const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
+const nonDraftTodoNDEs = todoNDEs.filter((post) => !post.frontmatter.draft);
 
 const pages = await Astro.glob('../pages/pages/*.mdx');
 const nonDraftPages = pages.filter((post) => !post.frontmatter.draft);
@@ -94,7 +95,7 @@ const nonDraftPages = pages.filter((post) => !post.frontmatter.draft);
 			<div class="pb-6 pr-2 rounded-lg">
 				<h2 class="section-header">ПБС за Превод</h2>
 				<p class="leading-relaxed">
-				{todoNDEs.map((nde) => (
+				{nonDraftTodoNDEs.map((nde) => (
 					<a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a><span>&comma;&nbsp;</span>
 				))}
 				</p>

@@ -6,6 +6,8 @@ const bulgarianNDEs = await Astro.glob('../pages/nde/bg/*.mdx');
 const allDoneNDEs = ndes.concat(bulgarianNDEs);
 
 const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
+const nonDraftTodoNDEs = todoNDEs.filter((post) => !post.frontmatter.draft);
+
 ---
 
 <BaseLayout title="Списък - Преживявания близки до смъртта"
@@ -21,7 +23,7 @@ const todoNDEs = await Astro.glob('../pages/nde/todo/*.mdx');
 	
 	<p>ПБС за превод&nbsp;({todoNDEs.length}):</p>
 	<ul>
-	{todoNDEs.map((nde) => (
+	{nonDraftTodoNDEs.map((nde) => (
 		<li><a href={nde.frontmatter.url+"/"}>{nde.frontmatter.experiencer}</a></li>
 	))}
 	</ul>
