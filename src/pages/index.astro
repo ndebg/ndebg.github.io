@@ -84,7 +84,8 @@ const pages = await Astro.glob('../pages/pages/*.mdx');
 				{pages.map((page) => (
 					<a href={page.frontmatter.url+"/"}>{page.frontmatter.title}</a><span>&comma;&nbsp;</span>
 				))}
-					<a href="/ndes/">ПБС Списък</a>
+					<a href="/ndes/">ПБС Списък</a>&comma;&nbsp;
+					<a href="/ndes-todo/">ПБС за превод</a>
 				</p>
 			</div>
 		</div>
