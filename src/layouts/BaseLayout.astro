@@ -6,6 +6,7 @@ export interface Props {
 
 const { title, description } = Astro.props.frontmatter || Astro.props;
 
+import SVGNdebgLogo from '../components/svg/SVGNdebgLogo.astro';
 import SVGLeftArrow from '../components/svg/SVGLeftArrow.astro';
 import SVGUpArrow from '../components/svg/SVGUpArrow.astro';
 import SVGFacebook from '../components/svg/SVGFacebook.astro';
@@ -56,8 +57,8 @@ const year = new Date().getFullYear();
 	</head>
 	<body class="flex flex-col min-h-screen">
 		<header id="main-header" class="text-gray-600 body-font unselectable">
-			<div class="header-top mx-auto flex flex-wrap p-3 flex-col md:flex-row place-content-center">
-				<a href="/" class="header-title ml-3 text-xl textalign-center font-bold">Преживявания близки до смъртта</a>
+			<div class="header-top mx-auto flex flex-wrap p-3 md:flex-row place-content-center">
+				<SVGNdebgLogo pathFill="#FFE188"/> <a href="/" class="header-title ml-3 text-xl textalign-center font-bold">Преживявания близки до смъртта</a>
 			</div>
 			<div class="header-menu mx-auto flex flex-wrap p-2 flex-col textalign-center items-center">
 				<nav class="flex flex-wrap place-content-center">
